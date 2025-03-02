@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cube</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .cube-container {
+            perspective: 1000px;
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 3s ease-out;
+        }
+
+        .face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+            background: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .front  { transform: translateZ(100px); }
+        .back   { transform: rotateX(-180deg) translateZ(100px); }
+        .right  { transform: rotateY(90deg) translateZ(100px); }
+        .left   { transform: rotateY(-90deg) translateZ(100px); }
+        .top    { transform: rotateX(90deg) translateZ(100px); }
+        .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #006699;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cube-container">
+            <div class="cube" id="cube">
+                <div class="face front">1</div>
+                <div class="face back">2</div>
+                <div class="face right">3</div>
+                <div class="face left">4</div>
+                <div class="face top">5</div>
+                <div class="face bottom">6</div>
+            </div>
+        </div>
+        <button onclick="rollDice()">Бросить кубик</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function getRandomRotation() {
+            return {
+                x: Math.floor(Math.random() * 4) * 90,
+                y: Math.floor(Math.random() * 4) * 90,
+                z: Math.floor(Math.random() * 4) * 90
+            };
+        }
+
+        function getResult(rotation) {
+            const faces = [
+                {x: 0,   y: 0,   result: 1},
+                {x: 180, y: 0,   result: 2},
+                {x: 90,  y: 0,   result: 3},
+                {x: 270, y: 0,   result: 4},
+                {x: 0,   y: 90,  result: 5},
+                {x: 0,   y: 270, result: 6}
+            ];
+
+            const normalizedX = rotation.x % 360;
+            const normalizedY = rotation.y % 360;
+
+            return faces.find(f => 
+                Math.abs(f.x - normalizedX) < 45 &&
+                Math.abs(f.y - normalizedY) < 45
+            )?.result || 1;
+        }
+
+        function rollDice() {
+            const cube = document.getElementById('cube');
+            const resultElement = document.getElementById('result');
+            
+            cube.style.transition = 'transform 3s ease-out';
+            
+            const rotation = getRandomRotation();
+            cube.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(${rotation.z}deg)`;
+
+            setTimeout(() => {
+                const result = getResult(rotation);
+                resultElement.textContent = `Выпало: ${result}`;
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
