@@ -1,9 +1,170 @@
-<html>
-  <head>
-    <title>Test</title>
-  </head>
-  <body>
-    <h1>Hello
-    </h1>
-  </body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse - Создание инновационных игр</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-symbol">SYNAPSE</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#games">Наши игры</a></li>
+                    <li><a href="#team">Команда</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Создаём игры, которые <span class="highlight">вдохновляют</span></h1>
+            <p>Инновационные решения, захватывающие миры и незабываемые впечатления</p>
+            <a href="#games" class="btn">Наши проекты</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>О компании Synapse</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Synapse - это студия разработки игр, где креативность встречается с технологиями. Мы создаём уникальные игровые вселенные, которые оставляют след в сердцах игроков.</p>
+                    <p>Основанная в 2020 году, наша компания уже выпустила несколько успешных проектов и продолжает расширять границы игровой индустрии.</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check-circle"></i> Инновационный геймплей</li>
+                        <li><i class="fas fa-check-circle"></i> Высококачественная графика</li>
+                        <li><i class="fas fa-check-circle"></i> Увлекательные сюжеты</li>
+                        <li><i class="fas fa-check-circle"></i> Поддержка сообщества</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="images/5193204760898039544.jpg" alt="Команда разработчиков Synapse">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="games" class="games">
+        <div class="container">
+            <h2>Наши игры</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-poster" style="background-image: url('images/game1.jpg');"></div>
+                    <h3>Neon Horizon</h3>
+                    <p>Киберпанк-экшен с открытым миром и динамичными боями</p>
+                    <span class="platforms"><i class="fab fa-windows"></i> <i class="fab fa-playstation"></i> <i class="fab fa-xbox"></i></span>
+                </div>
+                <div class="game-card">
+                    <div class="game-poster" style="background-image: url('images/game2.jpg');"></div>
+                    <h3>Echoes of Time</h3>
+                    <p>Приключенческая головоломка с механиками манипуляции временем</p>
+                    <span class="platforms"><i class="fab fa-windows"></i> <i class="fab fa-apple"></i></span>
+                </div>
+                <div class="game-card">
+                    <div class="game-poster" style="background-image: url('images/game3.jpg');"></div>
+                    <h3>Quantum Drift</h3>
+                    <p>Гонки будущего с элементами телепортации</p>
+                    <span class="platforms"><i class="fab fa-windows"></i> <i class="fab fa-playstation"></i> <i class="fab fa-xbox"></i> <i class="fab fa-apple"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Наша команда</h2>
+            <div class="team-members">
+                <div class="member">
+                    <img src="images/team1.png" alt="Максим Моисеев">
+                    <h3>Максим Моисеев</h3>
+                    <p>Главный программист</p>
+                </div>
+                <div class="member">
+                    <img src="images/team1.png" alt="Иван Калабанов">
+                    <h3>Иван Калабанов</h3>
+                    <p>Художественный руководитель</p>
+                </div>
+                <div class="member">
+                    <img src="images/team1.png" alt="Вечеслав Арефьев">
+                    <h3>Вечеслав Арефьев</h3>
+                    <p>Геймдизайнер</p>
+                </div>
+                <div class="member">
+                    <img src="images/team1.png" alt="Самир Ракипов">
+                    <h3>Самир Ракипов</h3>
+                    <p>Продюсер</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Свяжитесь с нами</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Разработчиков, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@synapse-games.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш email" required>
+                        <textarea placeholder="Ваше сообщение" required></textarea>
+                        <button type="submit" class="btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span>SYNAPSE</span>
+                    <p>Создаём будущее игр</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#games">Игры</a></li>
+                        <li><a href="#team">Карьера</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Подписка на новости</h3>
+                    <form>
+                        <input type="email" placeholder="Ваш email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Synapse Games. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
 </html>
